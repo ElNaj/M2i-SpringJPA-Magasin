@@ -22,6 +22,9 @@ public class ClientService {
     public Optional<Client> findByNom(String nom) {
         return this.repository.findByNom(nom);
     }
+    public List<Client> findAllClient(){
+    	return this.repository.findAll();
+    }
 
     public List<GetClientsDTO> findAll() {
         List<Client> clients = this.repository.findAll();
@@ -48,6 +51,7 @@ public class ClientService {
 
     public GetCommandesDTO getCommande(Long id) {
         Optional<Client> client = this.repository.findById(id);
+        System.out.println(client);
         return this.mapper.convertValue(client.get(), GetCommandesDTO.class);
     }
 }

@@ -9,10 +9,12 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="categorie")
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class Categorie {
 

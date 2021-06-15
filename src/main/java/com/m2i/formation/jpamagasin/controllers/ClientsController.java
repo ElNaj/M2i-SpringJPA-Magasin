@@ -28,6 +28,10 @@ public class ClientsController {
     ClientService service;
 
     @GetMapping
+    public List<Client> findAllClient() {
+        return service.findAllClient();
+    }
+    @GetMapping("/dtos")
     public List<GetClientsDTO> findAll() {
         return service.findAll();
     }
@@ -42,7 +46,7 @@ public class ClientsController {
         return service.findById(id);
     }
 
-    @GetMapping("/name/{name}")
+    @GetMapping("/name/{nom}")
     public Optional<Client> findByNom(@PathVariable String nom) {
         Optional<Client> user = service.findByNom(nom);
         return user;
