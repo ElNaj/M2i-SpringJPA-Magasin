@@ -29,41 +29,42 @@ public class ClientsController {
 
     @GetMapping
     public List<Client> findAllClient() {
-        return service.findAllClient();
+        return this.service.findAllClient();
     }
     @GetMapping("/dtos")
     public List<GetClientsDTO> findAll() {
-        return service.findAll();
+        return this.service.findAll();
     }
 
     @GetMapping("/{id}/commande")
     public GetCommandesDTO getCommande(@PathVariable Long id) {
-        return service.getCommande(id);
+    	
+        return this.service.getCommande(id);
     }
 
     @GetMapping("{id}")
     public GetClientsDTO findById(@PathVariable Long id) {
-        return service.findById(id);
+        return this.service.findById(id);
     }
 
     @GetMapping("/name/{nom}")
     public Optional<Client> findByNom(@PathVariable String nom) {
-        Optional<Client> user = service.findByNom(nom);
+        Optional<Client> user = this.service.findByNom(nom);
         return user;
     }
 
     @PostMapping
     public Client save(@RequestBody Client client) {
-        return service.save(client);
+        return this.service.save(client);
     }
 
     @PutMapping
     public Client edit(@RequestBody Client client) {
-        return service.save(client);
+        return this.service.save(client);
     }
 
     @DeleteMapping
     public void delete(@RequestBody Client client) {
-        service.delete(client);
+        this.service.delete(client);
     }
 }

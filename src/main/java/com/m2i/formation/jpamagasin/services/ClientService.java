@@ -22,6 +22,7 @@ public class ClientService {
     public Optional<Client> findByNom(String nom) {
         return this.repository.findByNom(nom);
     }
+
     public List<Client> findAllClient(){
     	return this.repository.findAll();
     }
